@@ -1,14 +1,10 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Comic Book Detail";
+    ViewBag.title = "Comic Book Detail";
 }
-
-<!DOCTYPE html>
-
-
 <div>
     <h1>@ViewBag.SeriersTitle</h1>
-    <h2>Issue: @ViewBag.IssueNumber</h2>
+    <h2>Issue #@ViewBag.IssueNumber</h2>
     <h5>Description:</h5>
     <div>@Html.Raw(ViewBag.Description)</div>
 
@@ -26,5 +22,6 @@
         </ul>
     </div>
     }
+ </div>
 
  
