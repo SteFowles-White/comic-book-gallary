@@ -9,9 +9,11 @@ namespace ComicBookGallary
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        //called once when the websites starts
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            //to acess right click on RoutConfig and go on the GoTODefination menu
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
