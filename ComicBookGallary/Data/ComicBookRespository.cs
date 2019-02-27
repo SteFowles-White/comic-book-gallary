@@ -58,8 +58,15 @@ namespace ComicBookGallary.Data
                         Favorite = false
                }
             };
+       
+        //Set up a data source for the comic book list page
+        //acess the Comic Book arrey ComicBook[]
+        public ComicBook[] GetComicBooks()
+        {
+            //return the above _comic book field
+            return _comicBooks;
+        }
 
-     
 
         public ComicBook GetComicBook(int id)
         {

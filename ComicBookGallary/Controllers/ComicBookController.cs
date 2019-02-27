@@ -20,6 +20,17 @@ namespace ComicBookGallary.Controllers
                 );
         }
 
+        //create an Action Result to return the list of Comic booked is the 
+        //ComicBookRespository
+        public ActionResult Index()
+        {
+            //assign the array of comic books to a variable
+            var comicBooks = _comicBookRepository.GetComicBooks();
+            //return the conmicbooks variable
+            return View(comicBooks);
+        }
+
+
         public ActionResult Detail(int? id)
         {
             if (id == null)
