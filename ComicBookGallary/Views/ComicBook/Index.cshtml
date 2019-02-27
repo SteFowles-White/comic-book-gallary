@@ -1,7 +1,28 @@
-﻿
+﻿<!--Need to coonect the model to the Comicbook array 
+    first need to access the model to formate
+    then need to access the ComicBook array that was constructed
+    in the ComicBookRepsoitory -->
+@model ComicBookGallary.Models.ComicBook[]
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Comic Books";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
+<div class="row">
+
+    <!--This loop is getting each item from the model (ComicBooks)
+        that the constructor sends through via the Model.ComicBook[]
+        which its getting form the data file CommicBookRespository
+        That is why the for each is looping through the Model-->
+    @foreach (var comicbook in Model)
+    {
+        <div class="col-md-3">
+            <h4>@comicbook.DisplayText </h4>
+            <img src="/Images/@comicbook.CoverImageFileName"
+                 alt="@comicbook.DisplayText"
+                 class="img-responsive" />
+        </div>
+    };
+
+</div>
