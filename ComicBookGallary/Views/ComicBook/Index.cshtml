@@ -18,10 +18,17 @@
     @foreach (var comicbook in Model)
     {
         <div class="col-md-3">
-            <h4>@comicbook.DisplayText </h4>
-            <img src="/Images/@comicbook.CoverImageFileName"
-                 alt="@comicbook.DisplayText"
-                 class="img-responsive" />
+            <!-- first parameter for is for the link text and the action name to route to
+               using ComicBook.DisplayText as the value for the link
+                Then Detail to acess the comic book View
+                Then an object id is needed for the voute value-->
+            <h4>@Html.ActionLink(comicbook.DisplayText, "Detail",
+                new { id = comicbook.Id} ) </h4> <!--This is an anonamse tyep means you can instantate an object withinout defining the class before hand -->
+            <a href="@Url.Action("Detail", new { id = comicbook.Id})">
+                <img src="/Images/@comicbook.CoverImageFileName"
+                     alt="@comicbook.DisplayText"
+                     class="img-responsive" />
+            </a>
         </div>
     };
 
